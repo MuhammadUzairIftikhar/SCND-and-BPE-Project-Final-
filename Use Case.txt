@@ -1,0 +1,2 @@
+Use cases for Online Grocery System
+1) Place Order: Customer can place his order (Add, delete, update) in his inventory 
