@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 Goal: Develop an order tracking system for an online groceries platform, providing real-time updates and improving customer experience.
+=======
+Use cases for Online Grocery System
+1) Place Order: Customer can place his order (Add, delete, update) in his inventory 
+>>>>>>> Uzair's_Branch_
