@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from CustomerService WSDL service -->
+
+  <service name="Customer" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://main"/>
+      <parameter name="wsdlServiceElement" value="CustomerService"/>
+      <parameter name="schemaQualified" value="http://main"/>
+      <parameter name="wsdlServicePort" value="Customer"/>
+      <parameter name="className" value="main.Customer"/>
+      <parameter name="wsdlPortType" value="Customer"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://main" xmlns:retNS="http://main" xmlns:rtns="http://main" name="getAllCustomers" qname="operNS:getAllCustomers" returnQName="retNS:getAllCustomersReturn" returnType="rtns:CustomerObject" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://main" xmlns:retNS="http://main" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="signIn" qname="operNS:signIn" returnQName="retNS:signInReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://main" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:customerName" type="tns:string"/>
+        <parameter xmlns:pns="http://main" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:cuspassword" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://main" name="signUp" qname="operNS:signUp" soapAction="">
+        <parameter xmlns:pns="http://main" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:customerName" type="tns:string"/>
+        <parameter xmlns:pns="http://main" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:customerAddress" type="tns:string"/>
+        <parameter xmlns:pns="http://main" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:cuspassword" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="getAllCustomers signIn signUp"/>
+
+      <typeMapping xmlns:ns="http://main" qname="ns:CustomerObject" type="java:main.CustomerObject" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>
