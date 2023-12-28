@@ -1,6 +1,22 @@
+<<<<<<< HEAD
 Use cases for Online Grocery System
 Danish's Goal: Develop an order tracking system for an online groceries platform, providing real-time updates and improving customer experience.
 Uzair's Goal: Place Order: Customer can place his order (Add, delete, update) in his inventory 
 Soha's Goal: Create a compelling and effective discounted campaign to attract customers and boost sales.
 
 
+=======
+<<<<<<< HEAD
+
+
+Goal: Create a compelling and effective discounted campaign to attract customers and boost sales.
+
+=======
+<<<<<<< HEAD
+Goal: Develop an order tracking system for an online groceries platform, providing real-time updates and improving customer experience.
+=======
+Use cases for Online Grocery System
+1) Place Order: Customer can place his order (Add, delete, update) in his inventory 
+>>>>>>> Uzair's_Branch_
+>>>>>>> Danish_branch
+>>>>>>> Soha_branch
