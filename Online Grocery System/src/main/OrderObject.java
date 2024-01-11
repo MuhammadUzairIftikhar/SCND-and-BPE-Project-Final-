@@ -5,7 +5,7 @@ public class OrderObject {
     public int ProductID;
     public String ProductName;
     public int Quantity;
-   
+    public int discountID;
 }
 
 

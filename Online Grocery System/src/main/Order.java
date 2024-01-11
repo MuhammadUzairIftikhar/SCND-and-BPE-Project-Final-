@@ -42,11 +42,12 @@ public class Order {
 		  try {
 	            Class.forName("com.mysql.jdbc.Driver");
 	            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/online grocery system", "root", "");
-	            String query = "INSERT INTO `order` (orderId, productName, quantity) VALUES (?, ?, ?)";
+	            String query = "INSERT INTO `order` (orderId, productName, quantity, discountID) VALUES (?, ?, ?, ?)";
 	            PreparedStatement stmt = con.prepareStatement(query);
 	            stmt.setInt(1, orderId);
 	            stmt.setString(2, order.ProductName);
 	            stmt.setInt(3, order.Quantity);
+	            stmt.setInt(4, order.discountID);
 	            stmt.executeUpdate();
 	            con.close();
 	        } catch (Exception e) {
