@@ -10,20 +10,16 @@
     xmlns="http://xml.apache.org/axis/wsdd/"
     xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
 
-  <!-- Services from OrderService WSDL service -->
+  <!-- Services from PaymentobjectService WSDL service -->
 
-  <service name="Order" provider="java:RPC" style="wrapped" use="literal">
+  <service name="Paymentobject" provider="java:RPC" style="document" use="encoded">
       <parameter name="wsdlTargetNamespace" value="http://main"/>
-      <parameter name="wsdlServiceElement" value="OrderService"/>
-      <parameter name="schemaQualified" value="http://main"/>
-      <parameter name="wsdlServicePort" value="Order"/>
-      <parameter name="className" value="main_pkg.OrderSoapBindingImpl"/>
-      <parameter name="wsdlPortType" value="Order"/>
+      <parameter name="wsdlServiceElement" value="PaymentobjectService"/>
+      <parameter name="wsdlServicePort" value="Paymentobject"/>
+      <parameter name="className" value="main.PaymentobjectSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Paymentobject"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="main" qname="operNS:main" xmlns:operNS="http://main" soapAction="" >
-        <parameter qname="pns:args" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
-      <parameter name="allowedMethods" value="main"/>
+      <parameter name="allowedMethods" value="*"/>
 
   </service>
 </deployment>

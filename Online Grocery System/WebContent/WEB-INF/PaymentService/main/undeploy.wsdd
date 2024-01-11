@@ -9,7 +9,7 @@
 <undeployment
     xmlns="http://xml.apache.org/axis/wsdd/">
 
-  <!-- Services from OrderService WSDL service -->
+  <!-- Services from PaymentService WSDL service -->
 
-  <service name="Order"/>
+  <service name="Payment"/>
 </undeployment>

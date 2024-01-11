@@ -24,6 +24,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="ProductID" type="xsd:int"/>
      <element name="ProductName" nillable="true" type="xsd:string"/>
      <element name="Quantity" type="xsd:int"/>
+     <element name="discountID" type="xsd:int"/>
     </sequence>
    </complexType>
    <element name="createOrder">
