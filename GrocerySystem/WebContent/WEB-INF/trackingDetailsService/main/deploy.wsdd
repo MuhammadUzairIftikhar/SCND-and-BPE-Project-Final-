@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from trackingDetailsService WSDL service -->
+
+  <service name="trackingDetails" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://main"/>
+      <parameter name="wsdlServiceElement" value="trackingDetailsService"/>
+      <parameter name="schemaQualified" value="http://main"/>
+      <parameter name="wsdlServicePort" value="trackingDetails"/>
+      <parameter name="className" value="main.trackingDetails"/>
+      <parameter name="wsdlPortType" value="trackingDetails"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://main" xmlns:retNS="http://main" xmlns:rtns="http://main" name="getAllTrackingDetails" qname="operNS:getAllTrackingDetails" returnQName="retNS:getAllTrackingDetailsReturn" returnType="rtns:TrackingDetailsObject" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://main" name="createTrackingDetails" qname="operNS:createTrackingDetails" soapAction="">
+        <parameter xmlns:pns="http://main" xmlns:tns="http://main" qname="pns:order" type="tns:TrackingDetailsObject"/>
+      </operation>
+      <parameter name="allowedMethods" value="getAllTrackingDetails createTrackingDetails"/>
+
+      <typeMapping xmlns:ns="http://main" qname="ns:TrackingDetailsObject" type="java:main.TrackingDetailsObject" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>
