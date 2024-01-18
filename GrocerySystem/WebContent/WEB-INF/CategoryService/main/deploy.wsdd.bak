@@ -1,0 +1,36 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from CategoryService WSDL service -->
+
+  <service name="Category" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://main"/>
+      <parameter name="wsdlServiceElement" value="CategoryService"/>
+      <parameter name="schemaQualified" value="http://main"/>
+      <parameter name="wsdlServicePort" value="Category"/>
+      <parameter name="className" value="main.CategorySoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Category"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getAllCategories" qname="operNS:getAllCategories" xmlns:operNS="http://main" returnQName="retNS:getAllCategoriesReturn" xmlns:retNS="http://main" returnType="rtns:CategoryObject" xmlns:rtns="http://main" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="getAllCategories"/>
+
+      <typeMapping
+        xmlns:ns="http://main"
+        qname="ns:CategoryObject"
+        type="java:main.CategoryObject"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>
