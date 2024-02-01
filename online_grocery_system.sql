@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2023 at 11:22 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Jan 13, 2024 at 12:11 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `category` (
   `categoryID` int(11) NOT NULL,
   `categoryName` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `category`
@@ -49,18 +49,20 @@ INSERT INTO `category` (`categoryID`, `categoryName`) VALUES
 CREATE TABLE `customer` (
   `CustomerID` int(11) NOT NULL,
   `CustomerName` varchar(50) NOT NULL,
-  `CustomerAddress` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `CustomerAddress` varchar(50) NOT NULL,
+  `cuspassword` varchar(65) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`CustomerID`, `CustomerName`, `CustomerAddress`) VALUES
-(1, 'smith', 'abc house'),
-(2, 'john', 'xyz house'),
-(3, 'smith', 'abc house'),
-(4, 'john', 'xyz house');
+INSERT INTO `customer` (`CustomerID`, `CustomerName`, `CustomerAddress`, `cuspassword`) VALUES
+(1, 'smith', 'abc house', ''),
+(2, 'john', 'xyz house', ''),
+(3, 'smith', 'abc house', ''),
+(4, 'john', 'xyz house', ''),
+(5, 'noor', 'clifton', '123');
 
 -- --------------------------------------------------------
 
@@ -72,7 +74,7 @@ CREATE TABLE `discount` (
   `ID` int(11) NOT NULL,
   `Name` varchar(45) NOT NULL,
   `Percentage Discount` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `discount`
@@ -98,7 +100,7 @@ CREATE TABLE `order` (
   `quantity` double NOT NULL,
   `discountID` int(11) NOT NULL,
   `productName` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `order`
@@ -107,6 +109,9 @@ CREATE TABLE `order` (
 INSERT INTO `order` (`orderID`, `OrderNo`, `orderDate`, `quantity`, `discountID`, `productName`) VALUES
 (1, 12, '2021-01-10', 340, 0, ''),
 (2, 23, '2022-02-12', 457, 0, ''),
+(749, 0, '0000-00-00', 45, 1, 'tshirts'),
+(13961, 0, '0000-00-00', 69, 1, 'supaid'),
+(62024, 0, '0000-00-00', 45, 1, 'tshirts'),
 (66431, 0, '0000-00-00', 10, 1, 'jacket');
 
 -- --------------------------------------------------------
@@ -119,7 +124,7 @@ CREATE TABLE `payment` (
   `PaymentID` int(11) NOT NULL,
   `customerID` int(11) NOT NULL,
   `date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `payment`
@@ -141,7 +146,7 @@ CREATE TABLE `product` (
   `productPrice` double NOT NULL,
   `productModel` varchar(45) NOT NULL,
   `customerID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `product`
@@ -162,7 +167,7 @@ CREATE TABLE `supplier` (
   `SupplierID` int(11) NOT NULL,
   `SupplierName` varchar(50) NOT NULL,
   `SupplierAddress` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `supplier`
@@ -181,7 +186,15 @@ INSERT INTO `supplier` (`SupplierID`, `SupplierName`, `SupplierAddress`) VALUES
 CREATE TABLE `trackingdetails` (
   `TrackingNo` int(11) NOT NULL,
   `courierNo` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `trackingdetails`
+--
+
+INSERT INTO `trackingdetails` (`TrackingNo`, `courierNo`) VALUES
+(1, 1),
+(2, 2);
 
 --
 -- Indexes for dumped tables
@@ -249,7 +262,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `CustomerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `CustomerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `discount`
@@ -285,7 +298,7 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT for table `trackingdetails`
 --
 ALTER TABLE `trackingdetails`
-  MODIFY `TrackingNo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `TrackingNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
