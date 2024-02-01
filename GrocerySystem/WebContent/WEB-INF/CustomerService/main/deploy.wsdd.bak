@@ -20,11 +20,11 @@
       <parameter name="className" value="main.CustomerSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="Customer"/>
       <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getAllCustomers" qname="operNS:getAllCustomers" xmlns:operNS="http://main" returnQName="retNS:getAllCustomersReturn" xmlns:retNS="http://main" returnType="rtns:CustomerObject" xmlns:rtns="http://main" soapAction="" >
+      </operation>
       <operation name="signIn" qname="operNS:signIn" xmlns:operNS="http://main" returnQName="retNS:signInReturn" xmlns:retNS="http://main" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:customerName" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:cuspassword" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
-      <operation name="getAllCustomers" qname="operNS:getAllCustomers" xmlns:operNS="http://main" returnQName="retNS:getAllCustomersReturn" xmlns:retNS="http://main" returnType="rtns:CustomerObject" xmlns:rtns="http://main" soapAction="" >
       </operation>
       <operation name="signUp" qname="operNS:signUp" xmlns:operNS="http://main" soapAction="" >
         <parameter qname="pns:customerName" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>

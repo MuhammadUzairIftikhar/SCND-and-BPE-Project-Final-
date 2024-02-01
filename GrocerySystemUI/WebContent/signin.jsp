@@ -10,11 +10,11 @@
 
 <h1>Sign In</h1>
 <form action="SignIn_Req.jsp" method="post">
-    <label for="productName">Product Name:</label>
+    <label for="productName">User:</label>
     <input type="text" name="CustomerName" id="CustomerName" required/><br>
 
 
-    <label for="discountID">Discount ID:</label>
+    <label for="discountID">Password:</label>
     <input type="text" name="cuspassword" id="cuspassword" required/><br>
 
     <button type="submit">Sign In</button>

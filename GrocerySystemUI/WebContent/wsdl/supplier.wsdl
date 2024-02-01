@@ -44,7 +44,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:portType name="supplier">
+   <wsdl:portType name="Supplier">
 
       <wsdl:operation name="getsupplier">
 
@@ -60,7 +60,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:portType>
 
-   <wsdl:binding name="supplierSoapBinding" type="impl:supplier">
+   <wsdl:binding name="SupplierSoapBinding" type="impl:Supplier">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
@@ -84,11 +84,11 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:binding>
 
-   <wsdl:service name="supplierService">
+   <wsdl:service name="SupplierService">
 
-      <wsdl:port binding="impl:supplierSoapBinding" name="supplier">
+      <wsdl:port binding="impl:SupplierSoapBinding" name="Supplier">
 
-         <wsdlsoap:address location="http://localhost:8080/GrocerySystem/services/supplier"/>
+         <wsdlsoap:address location="http://localhost:8080/GrocerySystem/services/Supplier"/>
 
       </wsdl:port>
 

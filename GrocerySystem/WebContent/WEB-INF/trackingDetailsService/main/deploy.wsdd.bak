@@ -10,30 +10,28 @@
     xmlns="http://xml.apache.org/axis/wsdd/"
     xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
 
-  <!-- Services from trackingDetailsService WSDL service -->
+  <!-- Services from TrackingDetailsService WSDL service -->
 
-  <service name="trackingDetails" provider="java:RPC" style="wrapped" use="literal">
+  <service name="TrackingDetails" provider="java:RPC" style="wrapped" use="literal">
       <parameter name="wsdlTargetNamespace" value="http://main"/>
-      <parameter name="wsdlServiceElement" value="trackingDetailsService"/>
+      <parameter name="wsdlServiceElement" value="TrackingDetailsService"/>
       <parameter name="schemaQualified" value="http://main"/>
-      <parameter name="wsdlServicePort" value="trackingDetails"/>
+      <parameter name="wsdlServicePort" value="TrackingDetails"/>
       <parameter name="className" value="main.TrackingDetailsSoapBindingImpl"/>
-      <parameter name="wsdlPortType" value="trackingDetails"/>
+      <parameter name="wsdlPortType" value="TrackingDetails"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="getAllTrackingDetails" qname="operNS:getAllTrackingDetails" xmlns:operNS="http://main" returnQName="retNS:getAllTrackingDetailsReturn" xmlns:retNS="http://main" returnType="rtns:TrackingDetailsObject" xmlns:rtns="http://main" soapAction="" >
+      <operation name="getTracking" qname="operNS:getTracking" xmlns:operNS="http://main" returnQName="retNS:getTrackingReturn" xmlns:retNS="http://main" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:TrackingNo" xmlns:pns="http://main" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <operation name="createTrackingDetails" qname="operNS:createTrackingDetails" xmlns:operNS="http://main" soapAction="" >
-        <parameter qname="pns:order" xmlns:pns="http://main" type="tns:TrackingDetailsObject" xmlns:tns="http://main"/>
+        <parameter qname="pns:TrackingNo" xmlns:pns="http://main" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:courierNo" xmlns:pns="http://main" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <parameter name="allowedMethods" value="getAllTrackingDetails createTrackingDetails"/>
+      <operation name="courierNo" qname="operNS:courierNo" xmlns:operNS="http://main" returnQName="retNS:courierNoReturn" xmlns:retNS="http://main" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getTrackingno" qname="operNS:getTrackingno" xmlns:operNS="http://main" returnQName="retNS:getTrackingnoReturn" xmlns:retNS="http://main" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="getTrackingno getTracking courierNo createTrackingDetails"/>
 
-      <typeMapping
-        xmlns:ns="http://main"
-        qname="ns:TrackingDetailsObject"
-        type="java:main.TrackingDetailsObject"
-        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
-        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
-        encodingStyle=""
-      />
   </service>
 </deployment>

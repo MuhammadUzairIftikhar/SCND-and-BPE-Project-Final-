@@ -44,16 +44,16 @@ public class CustomerProxy implements main.Customer {
     return customer;
   }
   
-  public boolean signIn(java.lang.String customerName, java.lang.String cuspassword) throws java.rmi.RemoteException{
-    if (customer == null)
-      _initCustomerProxy();
-    return customer.signIn(customerName, cuspassword);
-  }
-  
   public main.CustomerObject[] getAllCustomers() throws java.rmi.RemoteException{
     if (customer == null)
       _initCustomerProxy();
     return customer.getAllCustomers();
+  }
+  
+  public boolean signIn(java.lang.String customerName, java.lang.String cuspassword) throws java.rmi.RemoteException{
+    if (customer == null)
+      _initCustomerProxy();
+    return customer.signIn(customerName, cuspassword);
   }
   
   public void signUp(java.lang.String customerName, java.lang.String customerAddress, java.lang.String cuspassword) throws java.rmi.RemoteException{

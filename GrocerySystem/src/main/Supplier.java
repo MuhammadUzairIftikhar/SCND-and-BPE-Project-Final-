@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-public class supplier {
+public class Supplier {
 
 	public SupplierObject getsupplier(int id) {
 		SupplierObject suppinfo=null;

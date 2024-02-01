@@ -9,7 +9,7 @@
 <undeployment
     xmlns="http://xml.apache.org/axis/wsdd/">
 
-  <!-- Services from supplierService WSDL service -->
+  <!-- Services from SupplierService WSDL service -->
 
-  <service name="supplier"/>
+  <service name="Supplier"/>
 </undeployment>

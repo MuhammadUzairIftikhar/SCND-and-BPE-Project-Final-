@@ -4,21 +4,6 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://main" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="signIn">
-    <complexType>
-     <sequence>
-      <element name="customerName" type="xsd:string"/>
-      <element name="cuspassword" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="signInResponse">
-    <complexType>
-     <sequence>
-      <element name="signInReturn" type="xsd:boolean"/>
-     </sequence>
-    </complexType>
-   </element>
    <element name="getAllCustomers">
     <complexType/>
    </element>
@@ -37,6 +22,21 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="CustomerAddress" nillable="true" type="xsd:string"/>
     </sequence>
    </complexType>
+   <element name="signIn">
+    <complexType>
+     <sequence>
+      <element name="customerName" type="xsd:string"/>
+      <element name="cuspassword" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="signInResponse">
+    <complexType>
+     <sequence>
+      <element name="signInReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="signUp">
     <complexType>
      <sequence>
@@ -102,18 +102,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="Customer">
 
-      <wsdl:operation name="signIn">
-
-         <wsdl:input message="impl:signInRequest" name="signInRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:signInResponse" name="signInResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="getAllCustomers">
 
          <wsdl:input message="impl:getAllCustomersRequest" name="getAllCustomersRequest">
@@ -121,6 +109,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
        </wsdl:input>
 
          <wsdl:output message="impl:getAllCustomersResponse" name="getAllCustomersResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="signIn">
+
+         <wsdl:input message="impl:signInRequest" name="signInRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:signInResponse" name="signInResponse">
 
        </wsdl:output>
 
@@ -144,24 +144,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="signIn">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="signInRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="signInResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="getAllCustomers">
 
          <wsdlsoap:operation soapAction=""/>
@@ -173,6 +155,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="getAllCustomersResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="signIn">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="signInRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="signInResponse">
 
             <wsdlsoap:body use="literal"/>
 
