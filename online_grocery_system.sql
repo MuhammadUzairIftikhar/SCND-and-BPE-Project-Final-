@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2024 at 12:11 AM
+-- Generation Time: Feb 02, 2024 at 06:50 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `online grocery system`
 --
+CREATE DATABASE IF NOT EXISTS `online grocery system` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `online grocery system`;
 
 -- --------------------------------------------------------
 
@@ -73,19 +75,21 @@ INSERT INTO `customer` (`CustomerID`, `CustomerName`, `CustomerAddress`, `cuspas
 CREATE TABLE `discount` (
   `ID` int(11) NOT NULL,
   `Name` varchar(45) NOT NULL,
-  `Percentage Discount` varchar(45) NOT NULL
+  `PercentDiscount` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `discount`
 --
 
-INSERT INTO `discount` (`ID`, `Name`, `Percentage Discount`) VALUES
+INSERT INTO `discount` (`ID`, `Name`, `PercentDiscount`) VALUES
 (1, 'Black Friday ', '80%'),
 (2, '11 11 Sale ', '50% '),
 (3, 'Pakistan Day ', '75%'),
 (4, 'Defence Day ', '100%'),
-(5, 'Student ', '20%');
+(5, 'Student ', '20%'),
+(6, 'kala market', '45'),
+(7, 'ranod', '65%');
 
 -- --------------------------------------------------------
 
@@ -194,7 +198,8 @@ CREATE TABLE `trackingdetails` (
 
 INSERT INTO `trackingdetails` (`TrackingNo`, `courierNo`) VALUES
 (1, 1),
-(2, 2);
+(2, 2),
+(8, 8);
 
 --
 -- Indexes for dumped tables
@@ -268,7 +273,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `discount`
 --
 ALTER TABLE `discount`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `order`
@@ -298,7 +303,7 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT for table `trackingdetails`
 --
 ALTER TABLE `trackingdetails`
-  MODIFY `TrackingNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `TrackingNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
