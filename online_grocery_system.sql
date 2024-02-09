@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2024 at 06:50 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: Feb 09, 2024 at 09:09 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -64,7 +64,9 @@ INSERT INTO `customer` (`CustomerID`, `CustomerName`, `CustomerAddress`, `cuspas
 (2, 'john', 'xyz house', ''),
 (3, 'smith', 'abc house', ''),
 (4, 'john', 'xyz house', ''),
-(5, 'noor', 'clifton', '123');
+(5, 'noor', 'clifton', '123'),
+(6, 'uzair', 'amarica', '210'),
+(7, 'jon', 'pakistan', '123');
 
 -- --------------------------------------------------------
 
@@ -87,9 +89,7 @@ INSERT INTO `discount` (`ID`, `Name`, `PercentDiscount`) VALUES
 (2, '11 11 Sale ', '50% '),
 (3, 'Pakistan Day ', '75%'),
 (4, 'Defence Day ', '100%'),
-(5, 'Student ', '20%'),
-(6, 'kala market', '45'),
-(7, 'ranod', '65%');
+(5, 'Student ', '20%');
 
 -- --------------------------------------------------------
 
@@ -111,12 +111,13 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`orderID`, `OrderNo`, `orderDate`, `quantity`, `discountID`, `productName`) VALUES
-(1, 12, '2021-01-10', 340, 0, ''),
-(2, 23, '2022-02-12', 457, 0, ''),
 (749, 0, '0000-00-00', 45, 1, 'tshirts'),
-(13961, 0, '0000-00-00', 69, 1, 'supaid'),
+(8971, 0, '0000-00-00', 10, 1, 'Mobile'),
+(54868, 0, '0000-00-00', 20, 2, 'Tea'),
+(60515, 0, '0000-00-00', 11, 1, 'bottle'),
 (62024, 0, '0000-00-00', 45, 1, 'tshirts'),
-(66431, 0, '0000-00-00', 10, 1, 'jacket');
+(66431, 0, '0000-00-00', 10, 1, 'jacket'),
+(84272, 0, '0000-00-00', 52, 1, 'shamppoo');
 
 -- --------------------------------------------------------
 
@@ -199,7 +200,8 @@ CREATE TABLE `trackingdetails` (
 INSERT INTO `trackingdetails` (`TrackingNo`, `courierNo`) VALUES
 (1, 1),
 (2, 2),
-(8, 8);
+(3, 3),
+(4, 4);
 
 --
 -- Indexes for dumped tables
@@ -267,19 +269,19 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `CustomerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `CustomerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `discount`
 --
 ALTER TABLE `discount`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `orderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66432;
+  MODIFY `orderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84273;
 
 --
 -- AUTO_INCREMENT for table `payment`
@@ -303,7 +305,7 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT for table `trackingdetails`
 --
 ALTER TABLE `trackingdetails`
-  MODIFY `TrackingNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `TrackingNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -31,11 +31,11 @@
    <ns1:parameter qname="ns3:order" type="ns3:OrderObject"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="createOrder generateOrderId getOrder"/>
-  <ns1:parameter name="wsdlPortType" value="Order"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://main"/>
-  <ns1:parameter name="wsdlServicePort" value="Order"/>
+  <ns1:parameter name="wsdlPortType" value="Order"/>
   <ns1:parameter name="className" value="main.Order"/>
+  <ns1:parameter name="wsdlServicePort" value="Order"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="OrderService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns4:OrderObject" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:main.OrderObject" xmlns:ns4="http://main"/>
@@ -43,11 +43,11 @@
  <ns1:service name="Payment" provider="java:RPC" style="wrapped" use="literal">
   <ns1:operation name="getAllPayment" qname="ns5:getAllPayment" returnQName="ns5:getAllPaymentReturn" returnType="ns5:Paymentobject" soapAction="" xmlns:ns5="http://main"/>
   <ns1:parameter name="allowedMethods" value="getAllPayment"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Payment"/>
-  <ns1:parameter name="className" value="main.Payment"/>
-  <ns1:parameter name="wsdlServicePort" value="Payment"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="Payment"/>
+  <ns1:parameter name="className" value="main.Payment"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="PaymentService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns6:Paymentobject" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:main.Paymentobject" xmlns:ns6="http://main"/>
@@ -61,11 +61,11 @@
  <ns1:service name="Category" provider="java:RPC" style="wrapped" use="literal">
   <ns1:operation name="getAllCategories" qname="ns7:getAllCategories" returnQName="ns7:getAllCategoriesReturn" returnType="ns7:CategoryObject" soapAction="" xmlns:ns7="http://main"/>
   <ns1:parameter name="allowedMethods" value="getAllCategories"/>
-  <ns1:parameter name="wsdlPortType" value="Category"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://main"/>
-  <ns1:parameter name="wsdlServicePort" value="Category"/>
+  <ns1:parameter name="wsdlPortType" value="Category"/>
   <ns1:parameter name="className" value="main.Category"/>
+  <ns1:parameter name="wsdlServicePort" value="Category"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="CategoryService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns8:CategoryObject" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:main.CategoryObject" xmlns:ns8="http://main"/>
@@ -76,11 +76,11 @@
    <ns1:parameter qname="ns9:percentage" type="xsd:string"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="getDiscount"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Discount"/>
-  <ns1:parameter name="className" value="main.Discount"/>
-  <ns1:parameter name="wsdlServicePort" value="Discount"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="Discount"/>
+  <ns1:parameter name="className" value="main.Discount"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="DiscountService"/>
  </ns1:service>
@@ -100,11 +100,11 @@
    <ns1:parameter qname="ns12:cuspassword" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="getAllCustomers signIn signUp"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Customer"/>
-  <ns1:parameter name="className" value="main.Customer"/>
-  <ns1:parameter name="wsdlServicePort" value="Customer"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="Customer"/>
+  <ns1:parameter name="className" value="main.Customer"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="CustomerService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns13:CustomerObject" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:main.CustomerObject" xmlns:ns13="http://main"/>
@@ -120,11 +120,11 @@
   <ns1:operation name="courierNo" qname="ns16:courierNo" returnQName="ns16:courierNoReturn" returnType="xsd:int" soapAction="" xmlns:ns16="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   <ns1:operation name="getTrackingno" qname="ns17:getTrackingno" returnQName="ns17:getTrackingnoReturn" returnType="xsd:int" soapAction="" xmlns:ns17="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   <ns1:parameter name="allowedMethods" value="getTrackingno getTracking courierNo createTrackingDetails"/>
-  <ns1:parameter name="wsdlPortType" value="TrackingDetails"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://main"/>
-  <ns1:parameter name="wsdlServicePort" value="TrackingDetails"/>
+  <ns1:parameter name="wsdlPortType" value="TrackingDetails"/>
   <ns1:parameter name="className" value="main.TrackingDetails"/>
+  <ns1:parameter name="wsdlServicePort" value="TrackingDetails"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="TrackingDetailsService"/>
  </ns1:service>
@@ -134,11 +134,11 @@
   </ns1:operation>
   <ns1:operation name="getAllProduct" qname="ns19:getAllProduct" returnQName="ns19:getAllProductReturn" returnType="ns19:ProductObject" soapAction="" xmlns:ns19="http://main"/>
   <ns1:parameter name="allowedMethods" value="getAllProduct checkProductAvailability"/>
-  <ns1:parameter name="wsdlPortType" value="Product"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://main"/>
-  <ns1:parameter name="wsdlServicePort" value="Product"/>
+  <ns1:parameter name="wsdlPortType" value="Product"/>
   <ns1:parameter name="className" value="main.Product"/>
+  <ns1:parameter name="wsdlServicePort" value="Product"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="ProductService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns20:ProductObject" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:main.ProductObject" xmlns:ns20="http://main"/>
@@ -148,11 +148,11 @@
    <ns1:parameter qname="ns21:id" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="getsupplier"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Supplier"/>
-  <ns1:parameter name="className" value="main.Supplier"/>
-  <ns1:parameter name="wsdlServicePort" value="Supplier"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="Supplier"/>
+  <ns1:parameter name="className" value="main.Supplier"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="SupplierService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns22:SupplierObject" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:main.SupplierObject" xmlns:ns22="http://main"/>
